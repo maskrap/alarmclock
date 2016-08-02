@@ -38,3 +38,5 @@ $(document).ready(function()  {
     return clock;
   }(), 1000);
 });
+
+exports.weatherModule = Weather;
