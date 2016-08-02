@@ -2,7 +2,6 @@ var Alarm = require('../js/alarm.js').alarmModule;
 
 $(document).ready(function()  {
   var newAlarm = new Alarm();
-  $('#ring-alarm').fadeOut("slow");
 
   $('.set-alarm').submit(function(event)  {
     $('#alarm-output').empty();
@@ -16,10 +15,9 @@ $(document).ready(function()  {
   setInterval(function clock(){
     $('#time').text(moment());
     if(newAlarm.checkAlarm(moment().hour() + ":" + moment().minute())) {
+      $('#ring-alarm').fadeIn("slow");
       $('#ring-alarm').html("<h1>Alarm!</h1>");
       $('#ring-alarm').fadeOut("slow");
-      $('#ring-alarm').empty();
-      $('#ring-alarm').show();
     }
     return clock;
   }(), 1000)
