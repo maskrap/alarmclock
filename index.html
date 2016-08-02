@@ -15,7 +15,7 @@
     <h3 id="time"></h3>
     <h1>Alarm Clock</h1>
     <form class="set-alarm" method="post">
-      <div class="form-group">
+      <div class="container form-group">
         <label for="alarm-time">Set Alarm Time</label>
         <input id="alarm-time" type="time" name="alarm-time" class="form-control">
         <button type="submit" name="button" class="btn btn-success">Set</button>
@@ -23,5 +23,19 @@
     </form>
     <div id="ring-alarm"></div>
     <div id="alarm-output"></div>
+    <form class="set-snooze" method="post">
+      <div class="form-group">
+        <label for="snooze-time">Set Snooze (minutes):</label>
+        <input id="snooze-time" type="number" name="snooze-time" class="form-control">
+        <button type="submit" name="button" class="btn btn-success">Set</button>
+      </div>
+    </form>
+    <div class="container weather">
+      <h1>Get Weather Conditions From Anywhere!</h1>
+      <label for="location">Enter a location:</label>
+      <input id="location" type="text">
+      <button class="btn-success" id="weatherLocation">Get Current Humidity and Temperature!</button>
+      <div class="showWeather"></div>
+    </div>
   </body>
 </html>
