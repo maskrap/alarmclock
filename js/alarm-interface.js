@@ -12,8 +12,10 @@ $(document).ready(function()  {
   }(), 1000)
 
   $('.set-alarm').submit(function(event)  {
+    $('#alarm-output').empty();
     event.preventDefault();
     newAlarm.setTime($('#alarm-time').val());
+    $('.set-alarm')[0].reset();
     newAlarm.times.forEach(function(output) {
       $('#alarm-output').append("<p>" + output + "</p>")
     });
