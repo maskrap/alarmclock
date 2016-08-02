@@ -5,18 +5,18 @@ $(document).ready(function()  {
 
   setInterval(function clock(){
     $('#time').text(moment());
-    // @todo - check to see if alarm is triggered
+    if(newAlarm.checkAlarm(moment().hour() + ":" + moment().minute())) {
+      $('#ring-alarm').html("<h1>Alarm!</h1>");
+    }
     return clock;
-  }(), 3000)
+  }(), 1000)
 
   $('.set-alarm').submit(function(event)  {
     event.preventDefault();
     newAlarm.setTime($('#alarm-time').val());
     newAlarm.times.forEach(function(output) {
-      $('.alarm-output').append("<p>" + output + "</p>")
+      $('#alarm-output').append("<p>" + output + "</p>")
     });
   });
-
-
 
 });
